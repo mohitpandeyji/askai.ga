@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}
+Feedback
+{% endblock %}
+
+{% block styles %}
+{% endblock %}
+
+{% block content %}
+{% endblock content %}
+
+{% block rep %}
+<section class="pb_section bg-primary  pb_pb-250" id="section-features">
+    <div class="container">
+        <script src="{% static 'assets/js/jquery-3.4.1.js' %}"></script>
+        <h5 class="text-uppercase mb-2 pb_letter-spacing-2 text-center" style="font-size:20px;color: white">
+            <strong>Analysis Results:</strong></h5><br>
+
+        <img src="{{ picture }}" style="display: block; margin-right: auto; margin-left: auto; width: 50%;">
+
+        <div class="mb-4" style="margin-top: 50px;">
+            <form method="post" class="bg-white rounded pb_form_v1" id="feedbackform">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_message">Message</label>
+                    <textarea class="form-control" id="id_message" name="message" placeholder="Feedback" rows="5"
+                        required></textarea>
+                </div>
+                <input type="submit" name="feedback" id="feedbackbutton"
+                    class="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Feedback">
+                <input disabled type="submit" id="feedbackbutton2"
+                    class="btn btn-primary btn-lg btn-block pb_btn-pill btn-shadow-blue" style="display: none"
+                    value="Please wait.....">
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("#feedbackform").submit(function (e) {
+                            //stop submitting the form to see the disabled button effect
+                            $("#feedbackbutton").hide();
+                            $("#feedbackbutton2").show();
+                            return true;
+                        });
+                    });
+                </script>
+            </form>
+        </div>
+        <div>
+            <button onclick="location.href='http://localhost:8000'"> Try other models ...</button>
+        </div>
+    </div>
+</section>
+{% endblock rep %}

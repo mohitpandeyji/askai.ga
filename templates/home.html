@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<section class="pb_cover_v3 overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 "
+    id="section-home">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-5 relative align-self-center">
+                <form method="post" class="bg-white rounded pb_form_v1" onsubmit="return checkForm(this);"
+                    enctype='multipart/form-data'>
+                    {% csrf_token %}
+                    <h2 class="mb-4 mt-0 text-center">OPENVINO Pre-trained Models</h2><br>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" value="TEXT" checked>Text detection</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" value="CAR_META">Car attributes detection</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" value="POSE">Pose detection</label>
+                    </div><br>
+                    <div class="form-group">
+                        <input type="file" class="form-control pb_height-50 reverse" id="id_file" name="file" accept="image/*"
+                            placeholder="" required>
+                    </div><br>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue"
+                            name="check" value="Check">
+                    </div>
+                    <p class="mb-4 mt-0 text-center" style="font-size:25px;font-weight:bold">{{ report }}</p>
+                </form>
+                <script type="text/javascript">
+                    function checkForm(form) {
+                        form.check.disabled = true;
+                        form.check.value = "Please wait...";
+                        return true;
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

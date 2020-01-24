@@ -1,0 +1,12 @@
+asgiref==3.2.3
+certifi==2019.11.28
+Django==3.0.2
+mkl-fft==1.0.15
+mkl-random==1.1.0
+mkl-service==2.3.0
+numpy==1.17.4
+opencv-python==4.1.2.30
+pkgconfig==1.5.1
+pytz==2019.3
+six==1.13.0
+sqlparse==0.3.0

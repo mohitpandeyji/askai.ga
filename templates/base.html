@@ -1,0 +1,325 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block title %}Sentiment Analysis{% endblock %}</title>
+    <link href="{% static 'assets/images/openvino.png' %}" rel=icon>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/ionicons/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/tempusdominus-bootstrap-4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/slick-theme.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/helpers.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/landing-2.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/team.css' %}">
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    {% block styles %}
+    {% endblock styles %}
+
+</head>
+
+<body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
+
+    <nav class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light" id="pb-navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand p-2"><img style="height:50px;width:100px;"
+                    src="{% static 'assets/images/openvino.png' %}" alt="openvino"></a>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                data-target="#probootstrap-navbar" aria-controls="probootstrap-navbar" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span><i class="ion-navicon"></i></span>
+            </button>
+            {% comment %} <div class="collapse navbar-collapse" id="probootstrap-navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">User Check</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'analysis' %}">Analysis</a></li>
+                </ul>
+            </div> {% endcomment %}
+        </div>
+    </nav>
+    <!-- END nav -->
+
+
+    {% block content %}
+    {% endblock %}
+
+
+    <!-- END section -->
+
+    {% block rep %}
+    {% endblock rep %}
+
+    <section class="pb_section " id="section-faq">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-6 text-center mb-5">
+                    <h5 class="text-uppercase pb_font-15 mb-2 pb_color-dark-opacity-3 pb_letter-spacing-2">
+                        <strong>FAQ</strong></h5>
+                    <h2>Frequently Ask Questions</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <div id="pb_faq" class="pb_accordion" data-children=".item">
+                        <div class="item">
+                            <a data-toggle="collapse" data-parent="#pb_faq" href="#pb_faq1" aria-expanded="false"
+                                aria-controls="pb_faq1" class="pb_font-22 py-4">What is OpenVino?</a>
+                            <div id="pb_faq1" class="collapse" role="tabpanel">
+                                <div class="py-3">
+                                    <p
+                                        style="font-size:20px;font-weight:bold; margin-bottom: 0.5em;font-style: italic;">
+                                        The OpenVINO™ toolkit is an open source product. It contains the Deep Learning
+                                        Deployment Toolkit (DLDT) for Intel® processors (for CPUs), Intel® Processor
+                                        Graphics (for GPUs), and heterogeneous support. It includes an open model zoo
+                                        with pretrained models, samples, and demos.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a data-toggle="collapse" data-parent="#pb_faq" href="#pb_faq2" aria-expanded="false"
+                                aria-controls="pb_faq2" class="pb_font-22 py-4">How does it work?</a>
+                            <div id="pb_faq2" class="collapse" role="tabpanel">
+                                <div class="py-3">
+                                    <p
+                                        style="font-size:20px;font-weight:bold; margin-bottom: 0.5em;font-style: italic;">
+                                        There are three models available on this webapp. Once you chose your model and
+                                        Image, It is passed to Inference Engine of the OPENVINO Toolkit for your
+                                        prediction.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a data-toggle="collapse" data-parent="#pb_faq" href="#pb_faq3" aria-expanded="false"
+                                aria-controls="pb_faq3" class="pb_font-22 py-4">How long does it take to run?</a>
+                            <div id="pb_faq3" class="collapse" role="tabpanel">
+                                <div class="py-3">
+                                    <p
+                                        style="font-size:20px;font-weight:bold; margin-bottom: 0.5em;font-style: italic;">
+                                        It takes approximately fifteen to thirty seconds to run.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <a data-toggle="collapse" data-parent="#pb_faq" href="#pb_faq5" aria-expanded="false"
+                                aria-controls="pb_faq5" class="pb_font-22 py-4">How much does it cost?</a>
+                            <div id="pb_faq5" class="collapse" role="tabpanel">
+                                <div class="py-3">
+                                    <p
+                                        style="font-size:20px;font-weight:bold; margin-bottom: 0.5em;font-style: italic;">
+                                        It's free. It's an open source project.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- Team -->
+<section id="team" class="pb-5">
+    <div class="container">
+        <div class="row justify-content-center mb-1">
+                <div class="col-md-6 text-center mb-5">
+                    <h5 class="text-uppercase pb_font-15 mb-2 pb_letter-spacing-2">
+                        <strong>Meet the team</strong></h5>
+                </div>
+        </div>
+
+        <div class="row">
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="{% static 'assets/images/mohit.jpg' %}" alt="card image"></p>
+                                    <h4 class="card-title">Mohit Pandey</h4>
+                                    <p class="title">Fullstack developer</p>
+                                    <p class="title"><i>Python/ django developer,
+                                                    Data Science and AI/ML enthusiast</i></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">Mohit Pandey</h4>
+                                    <p class="title">Fullstack developer</p>
+                                    <p class="title"><i>Python/ django developer,
+                                                    Data Science and AI/ML enthusiast</i></p>                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a href="https://twitter.com/mohitpandeyji13" title="Twitter"
+                                                    target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://www.linkedin.com/in/mohitpandeyji" title="LinkedIn"
+                                                    target="_blank"><i class="fa fa-linkedin"
+                                                        aria-hidden="true"></i></a></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                           <a href="https://github.com/mohitpandeyji/" title="Github" target="_blank"><i
+                                                        class="fa fa-github" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="{% static 'assets/images/vahiwe.jpg' %}" alt="card image"></p>
+                                    <h4 class="card-title">Ahiwe Onyebuchi Valentine</h4>
+                                    <p class="title">FullStack Developer</p>
+                                            <p class="title"><i>Oracle Database Associate, Embedded system enthusiast,
+                                                    Android & Blockchain Developer, Linux advocate & data
+                                                    scientist.</i></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">Ahiwe Onyebuchi Valentine</h4>
+                                    <p class="title">FullStack Developer</p>
+                                            <p class="title"><i>Oracle Database Associate, Embedded system enthusiast,
+                                                    Android & Blockchain Developer, Linux advocate & data
+                                                    scientist.</i></p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a href="https://twitter.com/PROFXELFINITO" title="Twitter"
+                                                    target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://www.linkedin.com/in/vahiwe" title="LinkedIn"
+                                                    target="_blank"><i class="fa fa-linkedin"
+                                                        aria-hidden="true"></i></a></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                           <a href="https://github.com/vahiwe" title="Github" target="_blank"><i
+                                                        class="fa fa-github" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="{% static 'assets/images/tushar.jpg' %}" alt="card image"></p>
+                                    <h4 class="card-title">Tushar Goyal</h4>
+                                    <p class="title">Sophomore Student at Indian Institute of technology,Mandi</p>
+                                            <p class="title"><i>Data Science/ML Enthusiast</i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">Tushar Goyal</h4>
+                                    <p class="title">Sophomore Student at Indian Institute of technology,Mandi</p>
+                                    <p class="title"><i>Data Science/ML Enthusiast</i></p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a href="#" title="Twitter"
+                                                    target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://www.linkedin.com/in/tushar-goyal-1b8683122" title="LinkedIn"
+                                                    target="_blank"><i class="fa fa-linkedin"
+                                                        aria-hidden="true"></i></a></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                           <a href="https://github.com/tushargoyal22" title="Github" target="_blank"><i
+                                                        class="fa fa-github" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+        </div>
+    </div>
+</section>
+<!-- Team -->
+    <!-- END section -->
+
+
+    <footer class="pb_footer bg-light" role="contentinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="pb_font-14">&copy; 2020. All Rights Reserved. <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- loader -->
+    <div id="pb_loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#1d82ff" /></svg></div>
+
+
+    <script src="{% static 'assets/js/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.mb.YTPlayer.min.js' %}"></script>
+
+    <script src="{% static 'assets/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/slick.min.js' %}"></script>
+    <script src="{% static 'assets/js/moment.js' %}"></script>
+    <script src="{% static 'assets/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
