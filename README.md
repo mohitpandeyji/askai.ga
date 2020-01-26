@@ -1,5 +1,5 @@
 ## :cyclone: _OPENVINO_
-This is a project that utilizes the OpenVino Pre-trained models in running inference from a webapp. The three models available on the web app, they are Text Detection model, Human Pose Detection, Vehicle Attributes Detection model. These are pre-trained models from the openvino toolkit.
+This is a project that utilizes the OpenVino Pre-trained models in running inference from a webapp. There three models available on the web app, they are Text Detection model, Human Pose Detection, Vehicle Attributes Detection model. These are pre-trained models from the openvino toolkit. There are plans to add more models to the webapp. Contributions are welcome.
 
 ## :page_with_curl:  _Instructions on testing the project locally_
 
