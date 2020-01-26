@@ -7,7 +7,7 @@ This is a project that utilizes the OpenVino Pre-trained models in running infer
 
 **2)** Fire up your favourite console & clone this repo somewhere:
 
-__`❍ git clone https://github.com/vahiwe/askai.ga.git`__
+__`❍ git clone https://github.com/mohitpandeyji/askai.ga.git`__
 
 **3)** Install [python](https://www.python.org/) if not already installed and run this command to create a virtual environment:
 
