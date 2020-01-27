@@ -19,7 +19,7 @@ __`❍ conda activate pyvenv `__
 
 **5)** Run this command to install python packages/dependencies:
 
-__`❍ pip install -r requirements.text `__
+__`❍ pip install -r requirements.txt `__
 
 **6)** Run to create migrations for changes:
 
