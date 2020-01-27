@@ -1,7 +1,7 @@
 _Replace this text with a description of **what** your changes actually do, and the **motivation** behind them._
 
 ## Pull Request Style Guide
-- [ ] Title starts with `BAC-` issue code.
+- [ ] Title starts with `ASKAI-` issue code.
 - [ ] Title uses imperative form.
 - [ ] Sufficient description is included. (Lack of a good description should be a valid reason to reject a pull request)
 - Work-in-progress pull requests should be created as a github "draft" pull request.
