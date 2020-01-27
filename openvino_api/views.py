@@ -1,8 +1,11 @@
+import os
+
 from django.core.files.storage import FileSystemStorage
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect
 
 from openvino_api.app import main
+from openvino_api.settings import BASE_DIR
 
 
 @csrf_exempt
@@ -36,6 +39,9 @@ def feedback(request):
     if request.method == 'POST':
         message = request.POST['message']
         message = str(message)
+        feedback_file_path = str(BASE_DIR) + "/static/" + str('feedback.txt'),
+        if not feedback_file_path:
+            os.mknod(feedback_file_path)
         feedback = open("static/feedback.txt", "a+")
         feedback.write(message + "\n\n")
         feedback.close()
