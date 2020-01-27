@@ -1,4 +1,6 @@
 import argparse
+import os
+
 import cv2
 import numpy as np
 
@@ -101,6 +103,9 @@ def perform_inference(args):
     # Save down the resulting image
     mystr = args["i"]
     m = mystr.split('/')[-1]
+    output_folder_path = str(BASE_DIR) + "/static/" + str('outputs/')
+    if not os.path.isdir(output_folder_path):
+        os.makedirs(output_folder_path)
     file_name = BASE_DIR + "/static/outputs/output_{}.png".format(m.split('/')[-1].split('.')[0])
     view_file = ".." + "/static/outputs/output_{}.png".format(m.split('/')[-1].split('.')[0])
     cv2.imwrite(file_name, output_image)
