@@ -13,6 +13,9 @@ Feedback
 
 {% block rep %}
 <section class="pb_section bg-primary  pb_pb-250" id="section-features">
+    <div>
+        <button  type="submit"  onclick="location.href='{% url 'all_models' %}'"> CLICK here to try other models ...</button>
+    </div>
     <div class="container">
         <script src="{% static 'assets/js/jquery-3.4.1.js' %}"></script>
         <h5 class="text-uppercase mb-2 pb_letter-spacing-2 text-center" style="font-size:20px;color: white">
@@ -28,6 +31,7 @@ Feedback
                     <textarea class="form-control" id="id_message" name="message" placeholder="Feedback" rows="5"
                         required></textarea>
                 </div>
+
                 <input type="submit" name="feedback" id="feedbackbutton"
                     class="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Feedback">
                 <input disabled type="submit" id="feedbackbutton2"
@@ -45,9 +49,7 @@ Feedback
                 </script>
             </form>
         </div>
-        <div>
-            <button onclick="location.href='http://localhost:8000'"> Try other models ...</button>
-        </div>
+
     </div>
 </section>
 {% endblock rep %}
