@@ -14,15 +14,23 @@ Home
                     enctype='multipart/form-data'>
                     {% csrf_token %}
                     <h2 class="mb-4 mt-0 text-center">OPENVINO Pre-trained Models</h2><br>
+                    
                     <div class="radio">
                         <label><input type="radio" name="optradio" value="TEXT" checked>Text detection</label>
                     </div>
+
                     <div class="radio">
                         <label><input type="radio" name="optradio" value="CAR_META">Car attributes detection</label>
                     </div>
-                    <div class="radio disabled">
+
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" value="PEDESTRIAN">PEDESTRIAN detection</label>
+                    </div>
+
+                    <div class="radio">
                         <label><input type="radio" name="optradio" value="POSE">Pose detection</label>
                     </div><br>
+
                     <div class="form-group">
                         <input type="file" class="form-control pb_height-50 reverse" id="id_file" name="file" accept="image/*"
                             placeholder="" required>
