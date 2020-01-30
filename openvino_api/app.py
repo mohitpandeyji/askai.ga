@@ -64,6 +64,16 @@ def create_output_image(model_type, image, output):
                             (2 * scaler, 100 * scaler), cv2.FONT_HERSHEY_COMPLEX_SMALL,
                             1 * scaler, (255, 255, 255), 1 * scaler)
         return image
+
+    elif model_type == "PEDESTRIAN":
+        # Get only text detections above 0.5 confidence, set to 255
+        bbs = output
+        for boundingBox in bbs:
+            # print(boundingBox[0], boundingBox[1])
+            image = cv2.rectangle(image, tuple(boundingBox[0]), tuple(boundingBox[1]), (0, 0, 255), 10)
+        return image
+
+
     else:
         print("Unknown model type, unable to create output image.")
         return image

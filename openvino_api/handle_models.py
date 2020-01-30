@@ -52,6 +52,26 @@ def handle_car(output, input_shape):
     return color_pred, type_pred
 
 
+def handle_pedestrian(output, input_shape):
+    '''
+    Handles the output of Pedestrian, caluculate the bounding boxes
+    '''
+    bbs = [] # array of [[p1.x , p1.y], [p2.x, p2.y]
+    output = output['detection_out']
+    # print("input shape", input_shape)
+    #print(output.shape)
+    for ind in range(output.shape[2]):
+        score = output[0,0,ind,2]
+        if score > 0.7: # score threshold
+            p1x = int(output[0,0,ind,3] * input_shape[1])
+            p1y = int(output[0,0,ind,4] * input_shape[0])
+            p2x = int(output[0,0,ind,5] * input_shape[1])
+            p2y = int(output[0,0,ind,6] * input_shape[0])
+            bbs.append( [[p1x,p1y], [p2x,p2y]] )
+            # print("score:", score, "coordinate:" ,[[p1x,p1y], [p2x,p2y]] )
+    return bbs
+
+
 def handle_output(model_type):
     """
     Returns the related function to handle an output,
@@ -63,6 +83,8 @@ def handle_output(model_type):
         return handle_text
     elif model_type == "CAR_META":
         return handle_car
+    elif model_type == "PEDESTRIAN":
+        return handle_pedestrian
     else:
         return None
 
