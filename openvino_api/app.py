@@ -69,7 +69,7 @@ def create_output_image(model_type, image, output):
         # Get only text detections above 0.5 confidence, set to 255
         bbs = output
         for boundingBox in bbs:
-            print(boundingBox[0], boundingBox[1])
+            # print(boundingBox[0], boundingBox[1])
             image = cv2.rectangle(image, tuple(boundingBox[0]), tuple(boundingBox[1]), (0, 0, 255), 10)
         return image
 

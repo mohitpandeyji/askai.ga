@@ -58,7 +58,7 @@ def handle_pedestrian(output, input_shape):
     '''
     bbs = [] # array of [[p1.x , p1.y], [p2.x, p2.y]
     output = output['detection_out']
-    print("input shape", input_shape)
+    # print("input shape", input_shape)
     #print(output.shape)
     for ind in range(output.shape[2]):
         score = output[0,0,ind,2]
@@ -68,7 +68,7 @@ def handle_pedestrian(output, input_shape):
             p2x = int(output[0,0,ind,5] * input_shape[1])
             p2y = int(output[0,0,ind,6] * input_shape[0])
             bbs.append( [[p1x,p1y], [p2x,p2y]] )
-            print("score:", score, "coordinate:" ,[[p1x,p1y], [p2x,p2y]] )
+            # print("score:", score, "coordinate:" ,[[p1x,p1y], [p2x,p2y]] )
     return bbs
 
 
