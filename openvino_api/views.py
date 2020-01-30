@@ -21,6 +21,9 @@ def StartApp(request):
 
         elif type == 'POSE':
             model = "/models/human-pose-estimation-0001.xml"
+            
+        elif type== 'PEDESTRIAN':
+            model="/models/person-detection-retail-0013.xml"
         else:
             return render(request, "home.html")
         fs = FileSystemStorage()
