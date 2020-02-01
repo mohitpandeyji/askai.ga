@@ -10,7 +10,7 @@ from openvino_api.settings import BASE_DIR
 
 CAR_COLORS = ["white", "gray", "yellow", "red", "green", "blue", "black"]
 CAR_TYPES = ["car", "bus", "truck", "van"]
-
+MOOD_TYPE = ['neutral', 'happy', 'sad', 'surprise', 'anger']
 
 def get_mask(processed_output):
     """
@@ -73,6 +73,17 @@ def create_output_image(model_type, image, output):
             image = cv2.rectangle(image, tuple(boundingBox[0]), tuple(boundingBox[1]), (0, 0, 255), 10)
         return image
 
+    elif model_type == "MOOD":
+        # Get the color and car type from their lists
+        mood = MOOD_TYPE[output]
+        # Scale the output text by the image shape
+        scaler = max(int(image.shape[0] / 1000), 1)
+        # Write the text of color and type onto the image
+        image = cv2.putText(image, 
+            "MOOD: {}".format(mood), 
+            (50 * scaler, 100 * scaler), cv2.FONT_HERSHEY_SIMPLEX, 
+            2 * scaler, (255, 255, 255), 3 * scaler)
+        return image
 
     else:
         print("Unknown model type, unable to create output image.")

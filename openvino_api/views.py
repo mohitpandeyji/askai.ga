@@ -24,6 +24,10 @@ def StartApp(request):
             
         elif type== 'PEDESTRIAN':
             model="/models/person-detection-retail-0013.xml"
+
+        elif type== 'MOOD':
+            model="/models/emotions-recognition-retail-0003.xml"
+
         else:
             return render(request, "home.html")
         fs = FileSystemStorage()
