@@ -71,6 +71,18 @@ def handle_pedestrian(output, input_shape):
             # print("score:", score, "coordinate:" ,[[p1x,p1y], [p2x,p2y]] )
     return bbs
 
+def handle_mood(output, input_shape):
+    '''
+    Handles the output of the Car Metadata model.
+    Returns two integers: the argmax of each softmax output.
+    The first is for color, and the second for type.
+    '''
+    # Get rid of unnecessary dimensions
+    mood = output['prob_emotion'].flatten()
+    # TODO 1: Get the argmax of the "mood" output
+    mood_pred = np.argmax(mood)
+
+    return mood_pred
 
 def handle_output(model_type):
     """
@@ -85,6 +97,8 @@ def handle_output(model_type):
         return handle_car
     elif model_type == "PEDESTRIAN":
         return handle_pedestrian
+    elif model_type == "MOOD":
+        return handle_mood
     else:
         return None
 
