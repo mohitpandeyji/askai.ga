@@ -9,31 +9,35 @@ This is a project that utilizes the OpenVino Pre-trained models in running infer
 
 __`❍ git clone https://github.com/mohitpandeyji/askai.ga.git`__
 
-**3)** Install [python](https://www.python.org/) if not already installed and run this command to create a virtual environment:
+**3)** Enter this directory:
+
+__`❍ cd askai.ga `__
+
+**4)** Install [python](https://www.python.org/) if not already installed and run this command to create a virtual environment:
 
 __`❍ conda create -n pyvenv `__
 
-**4)** Activate the virtual environment:
+**5)** Activate the virtual environment:
 
 __`❍ conda activate pyvenv `__
 
-**5)** Run this command to install python packages/dependencies:
+**6)** Run this command to install python packages/dependencies:
 
 __`❍ pip install -r requirements.txt `__
 
-**6)** Run to create migrations for changes:
+**7)** Run to create migrations for changes:
 
 __`❍ python manage.py makemigrations`__
 
-**7)** Run to apply those changes to the database:
+**8)** Run to apply those changes to the database:
 
 __`❍ python manage.py migrate`__
 
-**8)** Start the server to view the webapp:
+**9)** Start the server to view the webapp:
 
 __`❍ python manage.py runserver `__
 
-**9)** Open your browser and type in this URL to view the webapp:
+**10)** Open your browser and type in this URL to view the webapp:
 
 __`❍ http://127.0.0.1:8000/`__
 
@@ -48,5 +52,11 @@ Once again, here are the links to the models, so you can use the **Output** sect
 * Human Pose Estimation: [human-pose-estimation-0001](https://docs.openvinotoolkit.org/latest/_models_intel_human_pose_estimation_0001_description_human_pose_estimation_0001.html)
 * Text Detection: [text-detection-0004](http://docs.openvinotoolkit.org/latest/_models_intel_text_detection_0004_description_text_detection_0004.html)
 * Determining Car Type & Color: [vehicle-attributes-recognition-barrier-0039](https://docs.openvinotoolkit.org/latest/_models_intel_vehicle_attributes_recognition_barrier_0039_description_vehicle_attributes_recognition_barrier_0039.html)
+
+## :open_book: _Articles:_
+Here are some articles related to this project:
+* [Setting up OpenVINO™ in the cloud](https://medium.com/@vahiwe/setting-up-openvino-in-the-cloud-b99599f157eb)
+* [Deploy Django and Flask Applications in the cloud using Nginx, Gunicorn and Supervisor](https://medium.com/@vahiwe/deploy-django-and-flask-applications-in-the-cloud-using-nginx-gunicorn-and-supervisor-a968dc618b22)
+* [Get a free Domain name and setup SSL on your Server](https://medium.com/@vahiwe/get-a-free-domain-name-and-setup-ssl-on-your-server-9ba1ac5a670c)
 
 __*Happy developing!*__
