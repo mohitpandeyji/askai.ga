@@ -15,11 +15,11 @@ __`❍ cd askai.ga `__
 
 **4)** Install [python](https://www.python.org/) if not already installed and run this command to create a virtual environment:
 
-__`❍ conda create -n pyvenv `__
+__`❍ python3 -m venv env `__
 
 **5)** Activate the virtual environment:
 
-__`❍ conda activate pyvenv `__
+__`❍ source env/bin/activate `__
 
 **6)** Run this command to install python packages/dependencies:
 
