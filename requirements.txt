@@ -5,7 +5,7 @@ mkl-fft==1.0.15
 mkl-random==1.1.0
 mkl-service==2.3.0
 numpy==1.17.4
-opencv-python==4.1.2.30
+opencv-python==4.2.0.32
 pkgconfig==1.5.1
 pytz==2019.3
 six==1.13.0
